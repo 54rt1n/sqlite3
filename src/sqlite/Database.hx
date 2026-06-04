@@ -4,6 +4,10 @@ package sqlite;
 
 typedef Database = sqlite.impl.nodejs.SqliteDatabase;
 
+#elseif (js && !nodejs)
+
+typedef Database = sqlite.impl.browser.SqliteDatabase;
+
 #elseif cpp
 
 typedef Database = sqlite.impl.cpp.SqliteDatabase;
